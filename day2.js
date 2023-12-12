@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const input = fs.readFileSync("day2.txt", { encoding: "utf-8" }).split("\r\n");
+const input = fs.readFileSync("day2.txt", "utf-8").split("\r\n");
 
 function part1(input) {
 	let acc = 0;
@@ -27,9 +27,7 @@ function part1(input) {
 function part2(input) {
 	let cubeSum = 0;
 	input.forEach((line) => {
-		let game = line.split(" ");
-		let gameId = game[1].slice(0, -1);
-		game = game.slice(2).join(" ").split(";");
+		let game = line.split(" ").slice(2).join(" ").split(";");
 
 		gameColor = {
 			red: 0,
